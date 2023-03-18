@@ -10,12 +10,16 @@ public class ObjectPooler : MonoBehaviour
     public bool willGrow;
 
     private List<GameObject> pooledObjects;
-   
 
-   void Awake()
-   {
-    current = this;
-   }
+    public float attackTimer = 0.1f;
+    private float currentAttackTimer = 0.2f;
+    private bool canAttack;
+
+
+    void Awake()
+    {
+        current = this;
+    }
     void Start()
     {
         pooledObjects = new List<GameObject>();
@@ -27,21 +31,48 @@ public class ObjectPooler : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        attackTimer += Time.deltaTime;
+        if (attackTimer > currentAttackTimer)
+        {
+            canAttack = true;
+        }
+    }
+
+
+
     public GameObject GetPooledObject()
     {
+
+
         for (int i = 0; i < pooledObjects.Count; i++)
         {
+
             if (!pooledObjects[i].activeInHierarchy)
             {
-                return pooledObjects[i];
+                if (canAttack)
+                {
+                    canAttack = false;
+                    attackTimer = 0f;
+                    return pooledObjects[i];
+                }
+                return null;
             }
+                if (willGrow)
+                {
+                    if (canAttack)
+                    {
+                        canAttack = false;
+                        attackTimer = 0f;
+                        GameObject obj = Instantiate(pooledObject);
+                        pooledObjects.Add(obj);
+                        return obj;
+                    }
+                    return null;
+                }
+            }
+            return null;
+
         }
-        if (willGrow)
-        {
-            GameObject obj = Instantiate(pooledObject);
-            pooledObjects.Add(obj);
-            return obj;
-        }
-        return null;
     }
-}

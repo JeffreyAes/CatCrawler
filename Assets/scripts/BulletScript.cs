@@ -39,7 +39,7 @@ public class BulletScript : MonoBehaviour
                 break;
             case "enemy":
                 Disable();
-                // other.GameObject.GetComponent<MyEnemyScript>().TakeDamage();
+                other.gameObject.GetComponent<EnemyScript>().TakeDamage();
                 // Handle Enemy Collision
                 break;
         }
