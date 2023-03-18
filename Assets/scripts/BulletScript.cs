@@ -5,21 +5,46 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public float bulletSpeed;
+
+
+
+    void OnEnable()
+    {
+        if(rb != null)
+        {
+            rb.velocity =  rb.transform.up * bulletSpeed ;
+        }
+        Invoke("Disable", 2f);
+    }
+
+    void Disable()
+    {
+        gameObject.SetActive(false);
+
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
+    }
 
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        switch(other.gameObject.tag)
+        switch (other.gameObject.tag)
         {
             case "wall":
-            Destroy(gameObject);
-            break;
+                Disable();
+                break;
             case "enemy":
-            Destroy(gameObject);
-            // other.GameObject.GetComponent<MyEnemyScript>().TakeDamage();
-            // Handle Enemy Collision
-            Destroy(gameObject);
-            break;
+                Disable();
+                // other.GameObject.GetComponent<MyEnemyScript>().TakeDamage();
+                // Handle Enemy Collision
+                break;
         }
     }
+
 }
+
+
