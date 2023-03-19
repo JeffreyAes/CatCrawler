@@ -11,8 +11,8 @@ public class ObjectPooler : MonoBehaviour
 
     private List<GameObject> pooledObjects;
 
-    public float attackTimer = 0.1f;
-    private float currentAttackTimer = 0.2f;
+    public float attackTimer = 0.5f;
+    private float currentAttackTimer = 1f;
     private bool canAttack;
 
 
