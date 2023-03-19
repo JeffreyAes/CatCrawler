@@ -146,6 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab52af33ad1137a4ea0d336be45adb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7315615972885960609, guid: 8f41111a3116e314dbac1018bed30b99, type: 3}
+  target: {fileID: 6825907538913391266, guid: 8f41111a3116e314dbac1018bed30b99, type: 3}
   rb: {fileID: 4308332201729824800}
   movementSpeed: 5
