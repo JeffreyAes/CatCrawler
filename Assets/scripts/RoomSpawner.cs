@@ -27,26 +27,25 @@ public class RoomSpawner : MonoBehaviour
         if (spawned == false)
         {
 
-            if(openingDirection == 1)
-            {
+              switch(openingDirection)
+        {
+            case 1:
                 rand = Random.Range(0, templates.bottomRooms.Length);
-                Instantiate(templates.bottomRooms[rand], transform.position, Quaternion.identity);
-            }
-            else if(openingDirection ==2) 
-            {
+                Instantiate(templates.bottomRooms[rand], gameObject.transform.position, new Quaternion());
+                break;
+            case 2:
                 rand = Random.Range(0, templates.topRooms.Length);
-                Instantiate(templates.topRooms[rand], transform.position, Quaternion.identity);
-            }
-            else if(openingDirection ==3) 
-            {
+                Instantiate(templates.topRooms[rand], gameObject.transform.position, new Quaternion());
+                break;
+            case 3:
                 rand = Random.Range(0, templates.leftRooms.Length);
-                Instantiate(templates.leftRooms[rand], transform.position, Quaternion.identity);
-            }
-            else if(openingDirection ==4) 
-            {
+                Instantiate(templates.leftRooms[rand], gameObject.transform.position, new Quaternion());
+                break;
+            case 4:
                 rand = Random.Range(0, templates.rightRooms.Length);
-                Instantiate(templates.rightRooms[rand], transform.position, Quaternion.identity);
-            }
+                Instantiate(templates.rightRooms[rand], gameObject.transform.position, new Quaternion());
+                break;
+        }
             spawned = true;
         }
     }

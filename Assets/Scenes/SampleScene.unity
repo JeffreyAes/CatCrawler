@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 387918191968372192, guid: f185c7770e6fc8c46818c9a8e7370857, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.14999962
+      objectReference: {fileID: 0}
     - target: {fileID: 2690121393974003546, guid: f185c7770e6fc8c46818c9a8e7370857, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -174,9 +178,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5873655811487892729, guid: f185c7770e6fc8c46818c9a8e7370857, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.14999962
+      objectReference: {fileID: 0}
+    - target: {fileID: 8670066166070666516, guid: f185c7770e6fc8c46818c9a8e7370857, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.14999771
+      objectReference: {fileID: 0}
     - target: {fileID: 9104998450425667978, guid: f185c7770e6fc8c46818c9a8e7370857, type: 3}
       propertyPath: m_Name
       value: EntryRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184260189122085214, guid: f185c7770e6fc8c46818c9a8e7370857, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -68.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184260189122085214, guid: f185c7770e6fc8c46818c9a8e7370857, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.14999771
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f185c7770e6fc8c46818c9a8e7370857, type: 3}
