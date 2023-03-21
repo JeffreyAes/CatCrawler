@@ -52,7 +52,7 @@ public class RoomSpawner : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("spawner") && other.GetComponent<RoomSpawner>().spawned == true)
+        if(other.CompareTag("spawner"))
         {
             Destroy(gameObject);
         }
