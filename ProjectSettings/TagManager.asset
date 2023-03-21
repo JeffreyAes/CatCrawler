@@ -7,6 +7,7 @@ TagManager:
   - wall
   - enemy
   - spawner
+  - rooms
   layers:
   - Default
   - TransparentFX

@@ -147,6 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneCamera: {fileID: 3359013884059317726, guid: 8154e9f081a98fe46a9d491411b45210, type: 3}
-  moveSpeed: 5
+  moveSpeed: 10
+  acceleration: 0.01
+  decceleration: -0.01
   rb: {fileID: -3571512292695335482}
   weapon: {fileID: 7165265867768680465, guid: 9dedb8936e9a51046b3ddb5ce1f8c441, type: 3}
