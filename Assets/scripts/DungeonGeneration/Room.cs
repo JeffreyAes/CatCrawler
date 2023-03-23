@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
-    public int Width;
-    public int Height;
+    public float Width;
+    public float Height;
     public int X;
     public int Y;
     // Start is called before the first frame update
@@ -16,6 +16,8 @@ public class Room : MonoBehaviour
             Debug.Log("You pressed play in the wrong scene.");
             return;
         }
+
+        RoomController.instance.RegisterRoom(this);
     }
 
     void OnDrawGizmos()
@@ -27,5 +29,16 @@ public class Room : MonoBehaviour
     public Vector3 GetRoomCenter()
     {
         return new Vector3(X * Width, Y * Height);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        switch(other.gameObject.tag)
+        {
+            case "Player":
+            RoomController.instance.OnPlayerEnterRoom(this);
+            break;
+        }
+        
     }
 }
