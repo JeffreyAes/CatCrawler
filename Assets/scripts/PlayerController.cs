@@ -44,8 +44,10 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-       
+
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+
+       
 
         // rotate player to follow the mouse
         Vector2 aimDirection = mousePosition - rb.position;

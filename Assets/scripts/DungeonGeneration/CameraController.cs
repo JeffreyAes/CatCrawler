@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour
     public static CameraController instance;
     public Room currentRoom;
     public float moveSpeedWhenRoomChanged;
-    public Transform confiner;  
+    public Transform confiner;
 
 
     void Awake()
@@ -39,9 +39,10 @@ public class CameraController : MonoBehaviour
 
         confiner.position = Vector3.MoveTowards(confiner.position, targetPos, Time.deltaTime * moveSpeedWhenRoomChanged);
         // confiner.position = targetPos;
+        
     }
 
-    Vector3 GetCameraTargetPosition()
+    public Vector3 GetCameraTargetPosition()
     {
         if(currentRoom == null)
         {

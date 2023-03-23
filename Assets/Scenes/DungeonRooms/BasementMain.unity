@@ -274,6 +274,7 @@ GameObject:
   - component: {fileID: 599324064}
   - component: {fileID: 599324063}
   - component: {fileID: 599324065}
+  - component: {fileID: 599324066}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -300,7 +301,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 12273961}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 8
@@ -313,7 +314,7 @@ MonoBehaviour:
     m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
-    m_InheritPosition: 0
+    m_InheritPosition: 1
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
@@ -352,6 +353,21 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 1309964028}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!114 &599324066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599324062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1414755426826b46916725f80c09b79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VcCamera: {fileID: 599324063}
+  cam: {fileID: 1111213161}
+  player: {fileID: 1884481172}
 --- !u!1001 &932750544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -505,7 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentRoom: {fileID: 0}
-  moveSpeedWhenRoomChanged: 600
+  moveSpeedWhenRoomChanged: 30
   confiner: {fileID: 1309964027}
 --- !u!114 &1111213164
 MonoBehaviour:
@@ -524,10 +540,10 @@ MonoBehaviour:
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
   m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
+  m_BlendUpdateMethod: 0
   m_DefaultBlend:
-    m_Style: 3
-    m_Time: 10
+    m_Style: 1
+    m_Time: 2
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -611,7 +627,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1309964025}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 14.489556}
+  m_LocalPosition: {x: 0, y: 0, z: -0.056}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -742,7 +758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BindingMode: 1
+  m_BindingMode: 0
   m_FollowOffset: {x: 0, y: 0, z: -10}
   m_XDamping: 1
   m_YDamping: 1
@@ -791,6 +807,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1884481172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7315615972885960609, guid: 8f41111a3116e314dbac1018bed30b99, type: 3}
+  m_PrefabInstance: {fileID: 12273960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2124731079 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7165265867768680465, guid: 9dedb8936e9a51046b3ddb5ce1f8c441, type: 3}
