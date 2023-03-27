@@ -18,7 +18,7 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour
 
     void UpdatePosition()
     {
-        if(currentRoom == null)
+        if (currentRoom == null)
         {
             return;
         }
@@ -38,13 +38,17 @@ public class CameraController : MonoBehaviour
         Vector3 targetPos = GetCameraTargetPosition();
 
         confiner.position = Vector3.MoveTowards(confiner.position, targetPos, Time.deltaTime * moveSpeedWhenRoomChanged);
-        // confiner.position = targetPos;
         
+        // confiner.position = targetPos;
+       
+       
+
+     
     }
 
     public Vector3 GetCameraTargetPosition()
     {
-        if(currentRoom == null)
+        if (currentRoom == null)
         {
             return Vector3.zero;
         }

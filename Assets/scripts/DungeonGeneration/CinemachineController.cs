@@ -5,24 +5,29 @@ using Cinemachine;
 
 public class CinemachineController : MonoBehaviour
 {
-    public CinemachineVirtualCamera VcCamera;
-    public CameraController cam;
-    public GameObject player;
-    // Start is called before the first frame update
-    
+    [SerializeField] CinemachineVirtualCamera VcCamera;
+    [SerializeField] Transform player;
 
-    // Update is called once per frame
+    public CameraController cam;
+
+
+
+
+
     void Update()
     {
         Vector3 targetPos = cam.GetCameraTargetPosition();
-        if(cam.confiner.position != targetPos)
+        if (cam.confiner.position != targetPos)
         {
-            VcCamera.Follow = null;
-            VcCamera.transform.position = Vector3.MoveTowards(VcCamera.transform.position, targetPos, Time.deltaTime * (cam.moveSpeedWhenRoomChanged/3f));
+            // VcCamera.Follow = cam.confiner;
+            // VcCamera.Follow = cam.confiner;
+            VcCamera.transform.position = Vector3.MoveTowards(VcCamera.transform.position, player.position, Time.deltaTime * (cam.moveSpeedWhenRoomChanged/6f));
+        }
+        else
+        {
+            VcCamera.Follow = player;
         }
 
-        else{
-            VcCamera.Follow = player.transform;
-        }
+
     }
 }
